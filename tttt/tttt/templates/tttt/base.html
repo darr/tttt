@@ -1,0 +1,63 @@
+{% load i18n staticfiles %}<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>{% block title %}{{ title|default:"登录"}}{% endblock %}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <link href="/static/flat-ui/css/flat-ui.css" rel="stylesheet">
+    <link href="/static/css/hades.css" rel="stylesheet">
+    <link href="http://www.bootcss.com/p/buttons/css/buttons.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.css">
+    <link rel="stylesheet" href="https://rawgithub.com/arschmitz/jquery-mobile-datepicker-wrapper/v0.1.1/jquery.mobile.datepicker.css" />
+	<link rel="stylesheet" href="http://ququplay.github.io/jquery-mobile-flat-ui-theme/css/jquery.mobile.flatui.css">
+
+
+</head>
+<body>
+
+<div class="header navbar">
+	<div class="container">
+	</div>
+</div>
+<div class="container">
+	{% if messages %}
+		{% for message in messages %}
+			<div class="alert {% if message.tags %}alert-{{ message.tags }}"{% endif %}>{{ message }}</div>
+		{% endfor %}
+	{% endif %}
+	{% block content %}
+		<p>Use this template get you up and running with django-users2.</p>
+	{% endblock content %}
+</div>
+	<script src="http://www.bootcss.com/p/chart.js/assets/Chart.js"></script>
+	<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!--
+	<script src="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.js"></script>
+
+--!>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+	<script src="http://cdn.bootcss.com/modernizr/2.8.2/modernizr.min.js"></script>
+	<script src="/static/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="https://rawgithub.com/jquery/jquery-ui/1.10.4/ui/jquery.ui.datepicker.js"></script>
+    <script id="mobile-datepicker" src="https://rawgithub.com/arschmitz/jquery-mobile-datepicker-wrapper/v0.1.1/jquery.mobile.datepicker.js"></script>
+
+	<script src="/static/js/juicer-min.js"></script>
+
+    <script src="/static/flat-ui/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="/static/flat-ui/js/jquery.dropkick-1.0.0.js"></script>
+    <script src="/static/flat-ui/js/custom_checkbox_and_radio.js"></script>
+    <script src="/static/flat-ui/js/custom_radio.js"></script>
+    <script src="/static/flat-ui/js/bootstrap-tooltip.js"></script>
+    <script src="/static/flat-ui/js/jquery.tagsinput.js"></script>
+    <script src="http://cdn.bootcss.com/jquery-placeholder/2.0.7/jquery.placeholder.min.js"></script>
+    <script src="http://vjs.zencdn.net/c/video.js"></script>
+
+	<script src="/static/dljs/hades.js"></script>
+
+</body>
+</html>

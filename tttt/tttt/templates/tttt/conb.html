@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="http://www.bootcss.com/p/buttons/css/buttons.css" rel="stylesheet">
+
+</head>
+<body>
+<div id="mytest">
+</div>
+<div id="mytest2">
+</div>
+<div id="mytest1">
+</div>
+<script>
+title ="{{con_content.title}}"
+title_trans ="{{con_content.title_trans}}"
+con = "{{con_content.con}}"
+con_trans ="{{con_content.con_trans}}"
+
+con = con.replace(/&amp;/g,"&");
+con = con.replace(/&lt;/g,"<");
+con = con.replace(/&gt;/g,">");
+con = con.replace(/&quot;/g,"\"");
+con = con.replace(/&#39;/g,"\"");
+con = con.replace(/<br \/>|\n|\r/ig, '');
+console.log(con)
+//con_dic = '{' + con_str +'}';
+//console.log(con_dic.count)
+//var obj = eval('(' + con_str+ ')');
+//console.log(obj)
+
+document.getElementById("mytest").innerHTML=title
+document.getElementById("mytest1").innerHTML=con
+con = con_trans
+con = con.replace(/&amp;/g,"&");
+con = con.replace(/&lt;/g,"<");
+con = con.replace(/&gt;/g,">");
+con = con.replace(/&quot;/g,"\"");
+con = con.replace(/&#39;/g,"\"");
+con = con.replace(/<br \/>|\n|\r/ig, '');
+
+document.getElementById("mytest2").innerHTML=con
+
+</script>
+<script src="static/data.js"></script>
+</body>
+
+</html>

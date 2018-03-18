@@ -1,0 +1,156 @@
+{% extends "furni/furni_base.html" %}
+{% block bodyblock %}
+<div data-role="page" id="pageone" data-theme="e">
+  <div data-role="header">
+    <a href="#" data-role="button" data-icon="home" data-iconpos="notext">首页</a>
+    <h1>欢迎访问我的主页</h1>
+    <a href="#" data-role="button" data-icon="gear" data-iconpos="notext">搜索</a>
+	<div data-role="navbar">
+      <ul>
+        <li><a href="/accounts/logout" data-icon="home">登出</a></li>
+        <li><a href="#" data-icon="arrow-r">页面二</a></li>
+        <li><a href="#" data-icon="search">搜索</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div data-role="content">
+       <select name="switch" id="switch" data-role="slider">
+          <option value="on">On</option>
+          <option value="off">Off</option>
+        </select>
+    <p>点击链接来查看滑动效果（从右向左滑动到下一页）</p>
+	<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+      <h1>点击我 - 我可以折叠！</h1>
+      <p>我是可折叠的内容。</p>
+      <div data-role="collapsible">
+        <h1>点击我 - 我是嵌套的可折叠块！</h1>
+        <p>我是嵌套的可折叠块中被展开的内容。</p>
+      </div>
+    </div>
+
+	<p>两列布局：</p>
+   <div class="ui-grid-a">
+		 <div class="ui-block-a"><a href="#" data-role="button" class="btn">第一列按钮</a><br>
+		   <span>第一列：This is some text. This is some text. This is some text. This is some text. This is some text.</span>
+		 </div>
+		 <div class="ui-block-b">
+		   <a href="#" data-role="button">第二列按钮</a><br>
+		   <span>第二列：This is some text. This is some text. This is some text. This is some text.</span>
+		 </div>
+	</div>
+
+    <a href="#pagetwo" data-transition="slide" data-role="button">滑动到页面二</a>
+ 	<a href="#page3" data-rel="dialog">转到主题化的对话页面</a>
+
+	<h2>不带有 data-inset="true" 属性的列表：</h2>
+    <ul data-role="listview">
+      <li><a href="#">列表项</a></li>
+      <li><a href="#">列表项</a></li>
+      <li><a href="#">列表项</a></li>
+    </ul><br>
+    <h2>带有 data-inset="true" 属性的列表：</h2>
+    <ul data-role="listview" data-inset="true">
+      <li><a href="#">列表项</a></li>
+      <li><a href="#">列表项</a></li>
+      <li><a href="#">列表项</a></li>
+    </ul>
+	<h2>我的邮箱</h2>
+    <ul data-role="listview" data-inset="true">
+      <li><a href="#">收件箱<span class="ui-li-count">25</span></a></li>
+      <li><a href="#">发件箱<span class="ui-li-count">432</span></a></li>
+      <li><a href="#">垃圾箱<span class="ui-li-count">7</span></a></li>
+    </ul>
+	 <p>定位图标：</p>
+		<a href="#link" data-role="button" data-icon="search" data-iconpos="top">Top</a>
+		<a href="#link" data-role="button" data-icon="search" data-iconpos="right">Right</a>
+		<a href="#link" data-role="button" data-icon="search" data-iconpos="bottom">Bottom</a>
+		<a href="#link" data-role="button" data-icon="search" data-iconpos="left">Left</a>
+
+
+<p>只有图标没有文本的按钮。</p>
+    <p><b>注释：</b>把鼠标指针移动到图标上会看到提示文本：</p>
+    <a href="#link" data-role="button" data-icon="search" data-iconpos="notext">Search</a>
+
+
+
+	<input type="text" data-role="date">
+
+
+  </div>
+<div data-role="footer">
+      <a href="#" data-role="button" data-icon="plus">转播到新浪微博</a>
+      <a href="#" data-role="button" data-icon="plus">转播到腾讯微博</a>
+      <a href="#" data-role="button" data-icon="plus">转播到QQ空间</a>
+  </div>
+
+</div> 
+
+<div data-role="page" id="page3" data-overlay-theme="e">
+  <div data-role="header" data-theme="b">
+    <h1>我是主题化的对话框</h1>
+  </div>
+
+  <div data-role="content" data-theme="a">
+    <p>data-overlay-theme 属性规定对话框出现在其上的页面的背景色。</p>
+    <a href="#pageone">转到页面一</a>
+  </div>
+
+  <div data-role="footer" data-theme="c">
+    <h1>页脚文本</h1>
+  </div>
+</div> 
+
+
+<div data-role="page" id="pagetwo">
+  <div data-role="header">
+    <h1>欢迎来到我的主页</h1>
+  </div>
+
+  <div data-role="content">
+    <p>点击链接来查看反向的滑动效果（从左向右滑动到前一页）</p>
+    <a href="#pageone" data-role="button" data-transition="slide" data-direction="reverse">滑动到页面一（反向）</a>
+		<button type="button" class="btn btn-default" onClick="loadXMLDoc()">查询</button>
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">设置查询条件</button>
+<div>
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="exampleModalLabel">搜索窗口</h4>
+		  </div>
+		  <div class="modal-body ">
+				<div id="radio_list">
+				</div>
+				<div id="checked_list">
+				</div>
+		  </div>
+
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			<button type="button" class="btn btn-primary" data-dismiss="modal" onClick="loadXMLDoc()">Send message</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+</div>
+
+<canvas id="lineChartCanvas" width="449" height="300"></canvas>		
+
+<div>
+  <input size="16" type="text" readonly class="form-control form_datetime1">
+</div>
+
+<div id="data_content">
+</div>
+  </div>
+
+  <div data-role="footer" class="ui-btn">
+	  <div data-role="controlgroup" data-type="vertical">
+		<a href="#" data-role="button" data-icon="plus">转播到 QQ 空间</a>
+	  </div>
+  </div>
+</div> 
+{% endblock %}
+

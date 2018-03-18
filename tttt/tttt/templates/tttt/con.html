@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<div id="mytest">
+</div>
+<div id="mytest1">
+</div>
+<script>
+con_str  ="{{con_content}}"
+con_str = con_str.replace(/&amp;/g,"&");
+con_str = con_str.replace(/&lt;/g,"<");
+con_str = con_str.replace(/&gt;/g,">");
+con_str = con_str.replace(/&quot;/g,"\"");
+console.log(con_str)
+document.getElementById("mytest1").innerHTML=con_str
+
+</script>
+</body>
+
+</html>
